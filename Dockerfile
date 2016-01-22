@@ -17,13 +17,12 @@ WORKDIR /opt/setup/
 
 RUN echo "++++ working at : $(pwd)"
 
-#made by ansible
-#COPY keyfile /opt/conf/
-#COPY passwords.js /opt/setup/
 
 COPY create-users.js /opt/setup/
 COPY create-replica.js /opt/setup/
 
+
+VOLUME /opt/conf
 
 # If We don't want again to treat this master as an executable
 # ENTRYPOINT ["/bin/bash"]
